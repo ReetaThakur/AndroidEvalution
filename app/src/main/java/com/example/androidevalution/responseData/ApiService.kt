@@ -6,5 +6,5 @@ import retrofit2.http.Query
 
 interface ApiService {
     @GET("people")
-    fun getInstance(@Query("page")page:Int):Call<List<ResponseModel>>
+    suspend fun getInstance(@Query("page")page:Int):List<ResponseModelItem>
 }
