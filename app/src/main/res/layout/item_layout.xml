@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    android:elevation="5dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/actorImage"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/actorName"
+            android:text="Name"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/countryName"
+            android:text="Country Name"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/countryCode"
+                android:text="Country Code"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/countryZone"
+                android:text="Country Zone"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/birthdate"
+            android:text="Birth date"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deathdate"
+            android:text="Death date"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"/>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
