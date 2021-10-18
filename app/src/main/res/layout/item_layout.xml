@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="data"
+            type="com.example.androidevalution.responseData.ResponseModelItem" />
+    </data>
+
+
+<androidx.cardview.widget.CardView
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:padding="10dp"
     android:layout_margin="10dp"
     app:cardCornerRadius="10dp"
@@ -84,3 +93,4 @@
 
 
 </androidx.cardview.widget.CardView>
+</layout>

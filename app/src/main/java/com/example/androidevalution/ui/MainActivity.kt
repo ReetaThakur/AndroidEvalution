@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidevalution.R
 import com.example.androidevalution.responseData.ApiService
 import com.example.androidevalution.responseData.Network
 import com.example.androidevalution.responseData.ResponseModel
 import com.example.androidevalution.responseData.ResponseModelItem
+import com.example.androidevalution.roomdatabase.ActorDAO
+import com.example.androidevalution.roomdatabase.ActorRoomDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +25,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var actorAdapter: ActorAdapte
     private lateinit var viewModel: ActorViewModel
-    private lateinit var acotrList:ArrayList<ResponseModelItem>
+    private lateinit var acotrList:PagingData<ResponseModelItem>
+    private lateinit var roomDb:ActorRoomDatabase
+    private lateinit var actorDAO: ActorDAO
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,7 +39,9 @@ class MainActivity : AppCompatActivity() {
         viewModel.searchPage().observe(this,{
             it.let {
                 CoroutineScope(Dispatchers.Main).launch {
+                    acotrList=it as PagingData<ResponseModelItem>
                     actorAdapter.submitData(it)
+                    viewModel.addActor(acotrList)
                 }
             }
         })
@@ -44,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             layoutManager=linearLayoutManager
             this.adapter=actorAdapter
         }
+        actorAdapter.notifyDataSetChanged()
     }
 
 

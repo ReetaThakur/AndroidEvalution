@@ -19,7 +19,7 @@ class ActorPagingSource:PagingSource<Int,ResponseModelItem>() {
         val responseModelItem =apiCall.getInstance(pageNumber)
         val responseList:ArrayList<ResponseModelItem> =responseModelItem as ArrayList<ResponseModelItem>
         return try {
-            LoadResult.Page(data = responseList,prevKey = null,nextKey = if (responseList.isEmpty()) null else pageNumber+1)
+           LoadResult.Page(data = responseList,prevKey = null,nextKey = if (responseList.isEmpty()) null else pageNumber+1)
         }catch (e:Exception){
             LoadResult.Error(e)
         }
