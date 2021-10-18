@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidevalution.R
+import com.example.androidevalution.databinding.ActivityMainBinding
 import com.example.androidevalution.responseData.ApiService
 import com.example.androidevalution.responseData.Network
 import com.example.androidevalution.responseData.ResponseModel
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var acotrList:PagingData<ResponseModelItem>
     private lateinit var roomDb:ActorRoomDatabase
     private lateinit var actorDAO: ActorDAO
+    private lateinit var binding:ActivityMainBinding
 
 
 
