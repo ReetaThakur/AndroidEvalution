@@ -15,13 +15,18 @@ class ActorPagingSource:PagingSource<Int,ResponseModelItem>() {
     }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ResponseModelItem> {
-        val pageNumber=params.key?:0
-        val responseModelItem =apiCall.getInstance(pageNumber)
-        val responseList:ArrayList<ResponseModelItem> =responseModelItem as ArrayList<ResponseModelItem>
-        return try {
-           LoadResult.Page(data = responseList,prevKey = null,nextKey = if (responseList.isEmpty()) null else pageNumber+1)
-        }catch (e:Exception){
-            LoadResult.Error(e)
+        val pageNumber = params.key ?: 0
+        val responseModelItem = apiCall.getInstance(pageNumber)
+        val responseList: ArrayList<ResponseModelItem> =
+            responseModelItem as ArrayList<ResponseModelItem>
+
+         return   try {
+                LoadResult.Page(data = responseList,
+                    prevKey = null,
+                    nextKey = if (responseList.isEmpty()) null else pageNumber + 1)
+            } catch (e: Exception) {
+                LoadResult.Error(e)
+            }
         }
-    }
+
 }

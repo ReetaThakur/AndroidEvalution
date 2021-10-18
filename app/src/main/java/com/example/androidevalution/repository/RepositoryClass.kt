@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class RepositoryClass {
 
-    fun getPageList()= Pager(config = PagingConfig(pageSize = 20),pagingSourceFactory = {ActorPagingSource()}).liveData
+    fun getPageList()= Pager(config = PagingConfig(pageSize = 10),pagingSourceFactory = {ActorPagingSource()}).liveData
 
      private val api:ApiService=Network.getApiService()
     private lateinit var actorDAO:ActorDAO

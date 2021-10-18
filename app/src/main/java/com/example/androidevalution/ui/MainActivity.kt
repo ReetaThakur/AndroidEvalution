@@ -27,8 +27,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var actorAdapter: ActorAdapte
     private lateinit var viewModel: ActorViewModel
     private lateinit var acotrList:PagingData<ResponseModelItem>
-    private lateinit var roomDb:ActorRoomDatabase
-    private lateinit var actorDAO: ActorDAO
     private lateinit var binding:ActivityMainBinding
 
 
